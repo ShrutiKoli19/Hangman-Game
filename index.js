@@ -67,10 +67,16 @@ window.onload = function () {
     showLives.innerHTML = "You have " + lives + " lives";
     if (lives < 1) {
       showLives.innerHTML = "Game Over";
+      geusses.length() = 0;
+   
     }
     for (var i = 0; i < geusses.length; i++) {
       if (counter + space === geusses.length) {
         showLives.innerHTML = "You Win!";
+      }
+      
+      else{
+        break;
       }
     }
   }
