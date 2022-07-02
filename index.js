@@ -11,7 +11,8 @@ window.onload = function () {
   var geusses = [ ];      
   var lives ;             
   var counter ;           
-  var space;             
+  var space;  
+  bool state = 1;
 
   var showLives = document.getElementById("mylives");
   var buttons = function () {
@@ -68,6 +69,7 @@ window.onload = function () {
     if (lives < 1) {
       showLives.innerHTML = "Game Over";
       geusses.length() = 0;
+      state = 0;
    
     }
     for (var i = 0; i < geusses.length; i++) {
@@ -158,10 +160,13 @@ window.onload = function () {
       this.setAttribute("class", "active");
       this.onclick = null;
       for (var i = 0; i < word.length; i++) {
-        if (word[i] === geuss) {
+        if (word[i] === geuss && state == 1) {
           geusses[i].innerHTML = geuss;
           counter += 1;
         } 
+        
+        if(state==0){
+            this.onclick = null;
       }
       var j = (word.indexOf(geuss));
       if (j === -1) {
