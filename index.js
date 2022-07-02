@@ -77,9 +77,6 @@ window.onload = function () {
         showLives.innerHTML = "You Win!";
       }
       
-      else{
-        break;
-      }
     }
   }
       // Animate man
