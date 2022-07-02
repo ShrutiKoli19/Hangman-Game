@@ -160,10 +160,7 @@ window.onload = function () {
         if (word[i] === geuss && state == 1) {
           geusses[i].innerHTML = geuss;
           counter += 1;
-        } 
-        
-        if(state==0){
-            this.onclick = null;
+        }
       }
       var j = (word.indexOf(geuss));
       if (j === -1) {
@@ -172,6 +169,10 @@ window.onload = function () {
         animate();
       } else {
         comments();
+      }
+      
+      if(state == 0){
+         this.onclick = null;
       }
     }
   }
