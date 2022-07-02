@@ -162,6 +162,10 @@ window.onload = function () {
           counter += 1;
         }
       }
+      
+       if(state == 0){
+         this.onclick = null;
+      }
       var j = (word.indexOf(geuss));
       if (j === -1) {
         lives -= 1;
@@ -170,10 +174,7 @@ window.onload = function () {
       } else {
         comments();
       }
-      
-      if(state == 0){
-         this.onclick = null;
-      }
+     
     }
   }
   
