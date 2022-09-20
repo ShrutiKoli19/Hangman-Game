@@ -11,8 +11,7 @@ window.onload = function () {
   var geusses = [ ];      
   var lives ;             
   var counter ;           
-  var space;  
-  bool state = 1;
+  var space;             
 
   var showLives = document.getElementById("mylives");
   var buttons = function () {
@@ -68,15 +67,11 @@ window.onload = function () {
     showLives.innerHTML = "You have " + lives + " lives";
     if (lives < 1) {
       showLives.innerHTML = "Game Over";
-      geusses.length() = 0;
-      state = 0;
-   
     }
     for (var i = 0; i < geusses.length; i++) {
       if (counter + space === geusses.length) {
         showLives.innerHTML = "You Win!";
       }
-      
     }
   }
       // Animate man
@@ -157,14 +152,10 @@ window.onload = function () {
       this.setAttribute("class", "active");
       this.onclick = null;
       for (var i = 0; i < word.length; i++) {
-        if (word[i] === geuss && state == 1) {
+        if (word[i] === geuss) {
           geusses[i].innerHTML = geuss;
           counter += 1;
-        }
-      }
-      
-       if(state == 0){
-         this.onclick = null;
+        } 
       }
       var j = (word.indexOf(geuss));
       if (j === -1) {
@@ -174,7 +165,6 @@ window.onload = function () {
       } else {
         comments();
       }
-     
     }
   }
   
@@ -214,7 +204,3 @@ window.onload = function () {
     play();
   }
 }
-
-
-
-  
